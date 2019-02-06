@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 project(example-app)
 
-# set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/libtorch/share/cmake/Torch")
-
-set(Torch_DIR "${CMAKE_SOURCE_DIR}/libtorch/share/cmake/Torch")
+set(Torch_DIR "${CMAKE_SOURCE_DIR}/lib/libtorch/share/cmake/Torch")
 
 find_package(Torch REQUIRED)
 
