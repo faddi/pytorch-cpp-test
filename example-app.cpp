@@ -42,12 +42,14 @@ int main() {
     for (auto& batch : *data_loader) {
       // Reset gradients.
       optimizer.zero_grad();
+
       // Execute the model on the input data.
       torch::Tensor prediction = net->forward(batch.data);
       // Compute a loss value to judge the prediction of our model.
       torch::Tensor loss = torch::nll_loss(prediction, batch.target);
       // Compute gradients of the loss w.r.t. the parameters of our model.
       loss.backward();
+
       // Update the parameters based on the calculated gradients.
       optimizer.step();
       // Output the loss and checkpoint every 100 batches.
